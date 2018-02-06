@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Default_Style">
+        <item name="main_color">@color/main_color</item>
+        <item name="main_title_txt_color">@android:color/white</item>
+        <item name="main_title_txt_size">18sp</item>
+        <item name="bg_splash">@color/main_color</item>
+    </style>
+</resources>
