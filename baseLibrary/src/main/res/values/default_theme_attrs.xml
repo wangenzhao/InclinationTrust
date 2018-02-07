@@ -4,4 +4,5 @@
     <attr name="main_title_txt_color" format="color" />
     <attr name="main_title_txt_size" format="dimension" />
     <attr name="bg_splash" format="color|reference" />
+    <attr name="default_title" format="string" />
 </resources>

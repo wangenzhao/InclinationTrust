@@ -1,8 +1,8 @@
-package com.inclination.trust.manager;
+package com.inclination.trust.baselib.manager;
 
 import android.app.Activity;
 
-import com.inclination.trust.utils.Logger;
+import com.inclination.trust.baselib.utils.Logger;
 
 import java.util.Stack;
 
@@ -34,12 +34,12 @@ public class ActivityManager {
 
     public void addActivity(Activity activity) {
         activities.add(activity);
-        Logger.d(activity + "入栈");
+        Logger.d(activity.getClass().getSimpleName() + "入栈\n当前栈内有" + activities.size() + "个Activity");
     }
 
     public void removeActivity(Activity activity) {
-        Logger.d(activity + "出栈");
         activities.remove(activity);
+        Logger.d(activity.getClass().getSimpleName() + "出栈\n当前栈内有" + activities.size() + "个Activity");
     }
 
     public void recreateAllActivity() {
@@ -49,7 +49,7 @@ public class ActivityManager {
     }
 
     public void recreateActivity(Activity activity) {
-        Logger.d(activity + "调用recreate方法");
+        Logger.d(activity.getClass().getSimpleName() + "调用recreate方法");
         activity.recreate();
     }
 }

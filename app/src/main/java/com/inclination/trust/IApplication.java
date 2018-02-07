@@ -4,24 +4,28 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
-import com.inclination.trust.manager.ActivityManager;
-import com.inclination.trust.utils.Logger;
+import com.inclination.trust.baselib.CustomApplication;
+import com.inclination.trust.baselib.theme.CustomTheme;
+import com.inclination.trust.baselib.utils.Logger;
 
 /**
  * author:王恩钊
  * time:2018/2/6 下午8:59
  */
 
-public class IApplication extends Application implements Application.ActivityLifecycleCallbacks {
+public class IApplication extends CustomApplication implements Application.ActivityLifecycleCallbacks {
 
     private int currentTheme = R.style.Default_Style;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        Logger.init(this);
         registerActivityLifecycleCallbacks(this);
+    }
 
+    @Override
+    protected int getCurrentTheme() {
+        return currentTheme;
     }
 
     @Override
@@ -62,6 +66,6 @@ public class IApplication extends Application implements Application.ActivityLif
 
     @Override
     public void onActivityDestroyed(Activity activity) {
-        ActivityManager.getInstance().removeActivity(activity);
+
     }
 }

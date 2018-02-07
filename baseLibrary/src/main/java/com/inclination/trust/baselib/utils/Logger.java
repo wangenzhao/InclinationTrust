@@ -1,4 +1,4 @@
-package com.inclination.trust.utils;
+package com.inclination.trust.baselib.utils;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
